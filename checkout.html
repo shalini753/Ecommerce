@@ -1,0 +1,108 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout | ShopEase</title>
+    <link rel="stylesheet" href="css/style.css">
+    
+</head>
+<body>
+
+<header class="navbar">
+    <a class="logo" href="index.html">ShopEase.</a>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="products.html">Products</a>
+        <a href="orders.html">My Orders</a>
+        <a href="login.html">Login</a>
+        <a href="cart.html">Cart (<span id="cart-count">0</span>)</a>
+    </nav>
+</header>
+
+<main class="page-wrap">
+    <div class="section-heading">
+        <h1>Checkout</h1>
+        <p>Enter your delivery details to place your order.</p>
+    </div>
+
+    <div class="checkout-layout">
+
+        <form id="checkoutForm" class="form-card">
+
+            <h2>Delivery Information</h2>
+
+            <label>
+                Full Name
+                <input type="text" name="name" required>
+            </label>
+
+            <label>
+                Email Address
+                <input type="email" name="email" required>
+            </label>
+
+            <label>
+                Phone Number
+                <input type="tel" name="phone" required>
+            </label>
+
+            <label>
+                Address
+                <textarea name="address" rows="3" required></textarea>
+            </label>
+
+            <div class="form-two">
+                <label>
+                    City
+                    <input type="text" name="city" required>
+                </label>
+
+                <label>
+                    PIN Code
+                    <input type="text" name="pincode"
+                           pattern="[0-9]{6}" required>
+                </label>
+            </div>
+
+            <h2>Payment Method</h2>
+
+            <p class="muted">
+                Demo payment only. No real payment will be collected.
+            </p>
+
+            <label class="radio-line">
+                <input type="radio" name="payment"
+                       value="Cash on Delivery" checked>
+                Cash on Delivery
+            </label>
+
+            <label class="radio-line">
+                <input type="radio" name="payment"
+                       value="Demo Online Payment">
+                Simulated Online Payment
+            </label>
+
+            <button type="submit" class="primary-btn full-btn">
+                Place Order
+            </button>
+
+            <p id="checkoutMessage" class="form-message"></p>
+
+        </form>
+
+        <aside id="checkoutSummary" class="summary-card"></aside>
+
+    </div>
+</main>
+
+<footer class="site-footer">
+    <p>© 2026 ShopEase. All rights reserved.</p>
+</footer>
+
+<script src="js/main.js"></script>
+<script src="js/checkout.js"></script>
+
+</body>
+</html>

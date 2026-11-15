@@ -1,0 +1,87 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Products | ShopEase</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <header>
+        <nav class="navbar">
+            <h2 class="logo">ShopEase.</h2>
+
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="products.html" class="active">Products</a>
+                <a href="orders.html">My Orders</a>
+                <a href="login.html">Login</a>
+                <a href="cart.html">
+                    Cart (<span id="cart-count">0</span>)
+                </a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- PAGE HEADING -->
+    <section class="products-section">
+
+        <div class="section-heading">
+            <h1>Our Products</h1>
+            <p>Explore our collection of quality products.</p>
+        </div>
+
+        <!-- SEARCH AND FILTERS -->
+        <div class="product-controls">
+
+            <input
+                type="text"
+                id="searchInput"
+                placeholder="Search products..."
+            >
+
+            <select id="categoryFilter">
+                <option value="all">All Categories</option>
+                <option value="Electronics">Electronics</option>
+                <option value="Fashion">Fashion</option>
+                <option value="Home & Living">Home & Living</option>
+                <option value="Accessories">Accessories</option>
+            </select>
+
+            <select id="sortFilter">
+                <option value="default">Sort By</option>
+                <option value="low-high">Price: Low to High</option>
+                <option value="high-low">Price: High to Low</option>
+                <option value="name">Name: A to Z</option>
+            </select>
+
+        </div>
+
+        <!-- PRODUCTS -->
+        <div class="product-grid" id="productContainer">
+
+            <!-- Products generated using JavaScript -->
+
+        </div>
+
+        <p id="noProducts" class="no-products" hidden>
+            No products found.
+        </p>
+
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>© 2026 ShopEase. All rights reserved.</p>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/products.js"></script>
+
+</body>
+</html>

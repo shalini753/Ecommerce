@@ -1,0 +1,524 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShopEase | Home</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: #f8f8f6;
+            color: #252525;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* NAVBAR */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 22px 7%;
+            background: white;
+            border-bottom: 1px solid #eee;
+        }
+
+        .logo {
+            font-size: 26px;
+            font-weight: bold;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+        }
+
+        .nav-links a {
+            font-size: 14px;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #888;
+        }
+
+        .cart-count {
+            background: #252525;
+            color: white;
+            border-radius: 50%;
+            padding: 3px 7px;
+            font-size: 11px;
+        }
+
+        /* HERO SECTION */
+        .hero {
+            min-height: 520px;
+            display: flex;
+            align-items: center;
+            padding: 70px 9%;
+            background: #eeede8;
+        }
+
+        .hero-content {
+            max-width: 600px;
+        }
+
+        .hero-content .tagline {
+            font-size: 13px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: #777;
+            margin-bottom: 20px;
+        }
+
+        .hero-content h1 {
+            font-family: Georgia, serif;
+            font-size: 58px;
+            line-height: 1.15;
+            font-weight: 500;
+            margin-bottom: 22px;
+        }
+
+        .hero-content p {
+            font-size: 16px;
+            color: #666;
+            line-height: 1.8;
+            margin-bottom: 30px;
+        }
+
+        .hero-btn {
+            display: inline-block;
+            padding: 15px 30px;
+            background: #252525;
+            color: white;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+
+        .hero-btn:hover {
+            background: #555;
+        }
+
+        /* COMMON SECTION */
+        .section {
+            padding: 75px 7%;
+        }
+
+        .section-heading {
+            text-align: center;
+            margin-bottom: 45px;
+        }
+
+        .section-heading h2 {
+            font-family: Georgia, serif;
+            font-size: 38px;
+            font-weight: 500;
+            margin-bottom: 12px;
+        }
+
+        .section-heading p {
+            color: #777;
+            font-size: 14px;
+        }
+
+        /* CATEGORIES */
+        .category-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 22px;
+        }
+
+        .category-card {
+            background: white;
+            padding: 40px 15px;
+            text-align: center;
+            border: 1px solid #eee;
+            transition: 0.3s;
+        }
+
+        .category-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+        }
+
+        .category-card .category-icon {
+            font-size: 35px;
+            margin-bottom: 18px;
+        }
+
+        .category-card h3 {
+            font-size: 17px;
+            font-weight: 500;
+            margin-bottom: 10px;
+        }
+
+        .category-card p {
+            color: #888;
+            font-size: 13px;
+        }
+
+        /* FEATURED PRODUCTS */
+        .featured-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 22px;
+        }
+
+        .featured-card {
+            background: white;
+            border: 1px solid #eee;
+            overflow: hidden;
+            transition: 0.3s;
+        }
+
+        .featured-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .featured-card img {
+            width: 100%;
+            height: 230px;
+            object-fit: cover;
+            background: #eee;
+        }
+
+        .featured-info {
+            padding: 18px;
+        }
+
+        .featured-info .category {
+            color: #888;
+            font-size: 12px;
+            margin-bottom: 9px;
+        }
+
+        .featured-info h3 {
+            font-size: 16px;
+            font-weight: 500;
+            margin-bottom: 10px;
+        }
+
+        .featured-info .price {
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .featured-info a {
+            display: block;
+            text-align: center;
+            padding: 11px;
+            background: #252525;
+            color: white;
+            font-size: 13px;
+        }
+
+        .featured-info a:hover {
+            background: #555;
+        }
+
+        .view-all {
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        .view-all a {
+            display: inline-block;
+            border: 1px solid #252525;
+            padding: 13px 28px;
+            transition: 0.3s;
+        }
+
+        .view-all a:hover {
+            background: #252525;
+            color: white;
+        }
+
+        /* PROMO SECTION */
+        .promo {
+            background: #252525;
+            color: white;
+            text-align: center;
+            padding: 65px 20px;
+        }
+
+        .promo h2 {
+            font-family: Georgia, serif;
+            font-size: 36px;
+            font-weight: 500;
+            margin-bottom: 15px;
+        }
+
+        .promo p {
+            color: #ccc;
+            margin-bottom: 25px;
+            line-height: 1.7;
+        }
+
+        .promo a {
+            display: inline-block;
+            padding: 13px 28px;
+            background: white;
+            color: #252525;
+            transition: 0.3s;
+        }
+
+        .promo a:hover {
+            background: #ddd;
+        }
+
+        /* FOOTER */
+        footer {
+            background: #fff;
+            padding: 30px 7%;
+            text-align: center;
+            border-top: 1px solid #eee;
+        }
+
+        footer p {
+            color: #777;
+            font-size: 13px;
+        }
+
+        /* RESPONSIVE */
+        @media(max-width: 900px) {
+            .category-grid,
+            .featured-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .hero-content h1 {
+                font-size: 46px;
+            }
+        }
+
+        @media(max-width: 600px) {
+            nav {
+                flex-direction: column;
+                gap: 18px;
+            }
+
+            .nav-links {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 14px;
+            }
+
+            .hero {
+                min-height: 430px;
+                padding: 55px 7%;
+            }
+
+            .hero-content h1 {
+                font-size: 38px;
+            }
+
+            .section {
+                padding: 55px 6%;
+            }
+
+            .section-heading h2 {
+                font-size: 30px;
+            }
+
+            .category-grid,
+            .featured-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .featured-card img {
+                height: 260px;
+            }
+
+            .promo h2 {
+                font-size: 29px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <nav>
+        <a href="index.html" class="logo">ShopEase.</a>
+
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="products.html">Products</a>
+            <a href="orders.html">My Orders</a>
+            <a href="login.html">Login</a>
+            <a href="cart.html">
+                Cart <span class="cart-count" id="cart-count">0</span>
+            </a>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="hero-content">
+
+            <p class="tagline">Welcome to ShopEase</p>
+
+            <h1>Find Your Everyday Essentials.</h1>
+
+            <p>
+                Discover quality products, explore the latest collections
+                and enjoy a simple and convenient shopping experience.
+                Everything you need, all in one place.
+            </p>
+
+            <a href="products.html" class="hero-btn">
+                Explore Products →
+            </a>
+
+        </div>
+    </section>
+
+    <!-- CATEGORIES -->
+    <section class="section">
+
+        <div class="section-heading">
+            <h2>Shop By Category</h2>
+            <p>Explore our carefully selected collections.</p>
+        </div>
+
+        <div class="category-grid">
+
+            <a href="products.html?category=Electronics"
+               class="category-card">
+                <div class="category-icon">🎧</div>
+                <h3>Electronics</h3>
+                <p>Technology for everyday life</p>
+            </a>
+
+            <a href="products.html?category=Fashion"
+               class="category-card">
+                <div class="category-icon">👕</div>
+                <h3>Fashion</h3>
+                <p>Style that suits you</p>
+            </a>
+
+            <a href="products.html?category=Home%20%26%20Living"
+               class="category-card">
+                <div class="category-icon">🏠</div>
+                <h3>Home & Living</h3>
+                <p>Make your space comfortable</p>
+            </a>
+
+            <a href="products.html?category=Accessories"
+               class="category-card">
+                <div class="category-icon">👜</div>
+                <h3>Accessories</h3>
+                <p>Complete your everyday look</p>
+            </a>
+
+        </div>
+
+    </section>
+
+    <!-- FEATURED PRODUCTS -->
+    <section class="section" style="background: #f0f0ec;">
+
+        <div class="section-heading">
+            <h2>Featured Products</h2>
+            <p>Some of our popular picks for you.</p>
+        </div>
+
+        <div class="featured-grid">
+
+            <div class="featured-card">
+                <img
+                    src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=600"
+                    alt="Wireless Headphones"
+                >
+                <div class="featured-info">
+                    <p class="category">Electronics</p>
+                    <h3>Wireless Headphones</h3>
+                    <p class="price">₹1,499</p>
+                    <a href="product-details.html?id=1">View Product</a>
+                </div>
+            </div>
+
+            <div class="featured-card">
+                <img
+                    src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=600"
+                    alt="Smart Watch"
+                >
+                <div class="featured-info">
+                    <p class="category">Electronics</p>
+                    <h3>Smart Watch</h3>
+                    <p class="price">₹2,499</p>
+                    <a href="product-details.html?id=2">View Product</a>
+                </div>
+            </div>
+
+            <div class="featured-card">
+                <img
+                    src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=600"
+                    alt="Running Shoes"
+                >
+                <div class="featured-info">
+                    <p class="category">Fashion</p>
+                    <h3>Running Shoes</h3>
+                    <p class="price">₹1,999</p>
+                    <a href="product-details.html?id=3">View Product</a>
+                </div>
+            </div>
+
+            <div class="featured-card">
+                <img
+                    src="https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=600"
+                    alt="Classic Backpack"
+                >
+                <div class="featured-info">
+                    <p class="category">Accessories</p>
+                    <h3>Classic Backpack</h3>
+                    <p class="price">₹999</p>
+                    <a href="product-details.html?id=4">View Product</a>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="view-all">
+            <a href="products.html">View All Products</a>
+        </div>
+
+    </section>
+
+    <!-- PROMO -->
+    <section class="promo">
+
+        <h2>Shopping Made Simple.</h2>
+
+        <p>
+            Find what you need, add it to your cart and enjoy
+            a convenient shopping experience with ShopEase.
+        </p>
+
+        <a href="products.html">Start Shopping</a>
+
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>© 2026 ShopEase. All Rights Reserved.</p>
+    </footer>
+
+    <!-- JAVASCRIPT -->
+    <script src="js/main.js"></script>
+
+</body>
+</html>
